@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor și Comprimare PDF</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 Convertor & Comprimare PDF</h1>
+            <p class="subtitle">Convertește DOC/DOCX în PDF sau comprima fișiere PDF existente</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="drop-zone" id="dropZone">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <p class="drop-text">Trage și plasează fișierul aici</p>
+                    <p class="drop-text-or">sau</p>
+                    <label for="fileInput" class="browse-button">Alege fișier</label>
+                    <input type="file" id="fileInput" accept=".doc,.docx,.pdf" hidden>
+                    <p class="file-types">Acceptă: DOC, DOCX, PDF (max 50MB)</p>
+                </div>
+
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-details">
+                        <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <div class="file-text">
+                            <p class="file-name" id="fileName"></p>
+                            <p class="file-size" id="fileSize"></p>
+                        </div>
+                        <button class="remove-button" id="removeFile">×</button>
+                    </div>
+                </div>
+
+                <button class="convert-button" id="convertButton" disabled>
+                    <span id="buttonText">Procesează fișierul</span>
+                </button>
+
+                <div class="progress-section" id="progressSection" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Se procesează...</p>
+                </div>
+
+                <div class="result-section" id="resultSection" style="display: none;">
+                    <div class="success-message">
+                        <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3>Succes!</h3>
+                        <p id="resultMessage"></p>
+                        <button class="download-button" id="downloadButton">
+                            Descarcă PDF
+                        </button>
+                        <button class="reset-button" id="resetButton">
+                            Procesează alt fișier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Conversie DOC/DOCX</h3>
+                    <p>Convertește documente Word în format PDF de calitate</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗜️</div>
+                    <h3>Comprimare PDF</h3>
+                    <p>Reduce dimensiunea fișierelor PDF existente</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rapid & Ușor</h3>
+                    <p>Procesare rapidă direct în browser</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>🔒 Fișierele tale sunt procesate în siguranță și șterse automat</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
